@@ -1,3 +1,4 @@
+import show from 'icons/show.png';
 import React, {useState} from 'react';
 import {
   Image,
@@ -10,9 +11,9 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import show from 'icons/show.png';
 import {normalize} from 'utils/normalize';
 import {styling} from './styles';
+import {colors} from 'colors';
 
 interface propsInputComponent {
   isAdd?: boolean;
@@ -30,6 +31,7 @@ interface propsInputComponent {
   multi?: boolean;
   placeholderIsTop?: boolean;
   rightImage?: ImageSourcePropType | null;
+  placeholderColor?: string;
 }
 function InputComponent(props: propsInputComponent) {
   const {
@@ -47,6 +49,7 @@ function InputComponent(props: propsInputComponent) {
     rightImage,
     type,
     rightPress,
+    placeholderColor,
   } = props;
   const styles = styling(
     leftText,
@@ -78,7 +81,7 @@ function InputComponent(props: propsInputComponent) {
           onChangeText={onChange}
           value={value}
           placeholder={placeholder}
-          // placeholderTextColor={style?.textcolor ?? colors.black}
+          placeholderTextColor={placeholderColor ?? colors.black}
           secureTextEntry={secure}
           textContentType={'none'}
           multiline={multi}

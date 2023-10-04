@@ -13,7 +13,6 @@ export default StyleSheet.create({
   },
   btnText: {
     alignSelf: 'center',
-    fontFamily: 'Epilogue-Bold',
     fontSize: normalize(15),
     color: colors.white,
   },
