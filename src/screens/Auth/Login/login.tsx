@@ -18,7 +18,7 @@ import {colors} from 'colors';
 import {normalize} from 'utils/normalize';
 import {reggexEmail} from 'utils/validations';
 
-function LoginScreen({}: routerProps<'Login'>) {
+function LoginScreen({navigation}: routerProps<'Login'>) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [validate, setValidate] = useState(false);
@@ -90,8 +90,7 @@ function LoginScreen({}: routerProps<'Login'>) {
               style={styles.inputEmail}
               placeholderColor={colors.neutral60}
             />
-            <Pressable
-              onPress={() => console.log('Navegacion a forgotPassword')}>
+            <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
               <Text style={styles.styleForgotPassword}>Olvide contraseña</Text>
             </Pressable>
           </View>
@@ -108,7 +107,7 @@ function LoginScreen({}: routerProps<'Login'>) {
               buttonText={'Inicia sesión'}
               styleText={styles.styleTextButton}
             />
-            <Pressable onPress={() => console.log('Navegacion hacia registro')}>
+            <Pressable onPress={() => navigation.navigate('Register')}>
               <Text style={styles.textRegister}>
                 Si aun no tienes cuenta
                 <Text style={styles.textRegisterBlue}> Registrate</Text>
