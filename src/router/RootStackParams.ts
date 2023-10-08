@@ -9,6 +9,7 @@ export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   ForgotPassword: undefined;
+  MyDrawer: undefined;
   Home: undefined;
   Details: {
     variable: number;
