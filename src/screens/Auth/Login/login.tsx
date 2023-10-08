@@ -19,11 +19,11 @@ import {normalize} from 'utils/normalize';
 import {reggexEmail} from 'utils/validations';
 
 function LoginScreen({navigation}: routerProps<'Login'>) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [validate, setValidate] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [validate, setValidate] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (email === '' || password === '') {
