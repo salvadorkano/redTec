@@ -47,6 +47,7 @@ function LoginScreen({navigation}: routerProps<'Login'>) {
   };
 
   function onLogin() {
+    navigation.navigate('MyDrawer');
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
