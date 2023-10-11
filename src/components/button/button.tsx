@@ -12,7 +12,7 @@ import styles from './styles';
 
 interface propsButtonComponent {
   styleButton: ViewStyle;
-  styleText: TextStyle;
+  styleText?: TextStyle;
   onPress(): void;
   loading?: boolean;
   disabled?: boolean | undefined;

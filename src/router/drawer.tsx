@@ -1,13 +1,23 @@
+/* eslint-disable react/no-unstable-nested-components */
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import HomeScreen from 'screens/Main/Home/home';
 import React from 'react';
 import ProfileScreen from 'screens/Main/Profile/profile';
+import CustomDrawerContent from '../screens/Drawer/CustomDrawer';
+import {RootStackParamList} from './RootStackParams';
+import {StyleSheet} from 'react-native';
+import HomeScreen from 'screens/Main/Home/home';
 
-const Drawer = createDrawerNavigator();
-
+const Drawer = createDrawerNavigator<RootStackParamList>();
 function MyDrawer() {
   return (
-    <Drawer.Navigator useLegacyImplementation={false}>
+    <Drawer.Navigator
+      useLegacyImplementation={false}
+      screenOptions={{
+        drawerPosition: 'right',
+        headerShown: false,
+        drawerStyle: styles.drawerStyles,
+      }}
+      drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
@@ -15,3 +25,10 @@ function MyDrawer() {
 }
 
 export default MyDrawer;
+
+const styles = StyleSheet.create({
+  drawerStyles: {
+    width: 280,
+    backgroundColor: 'transparent',
+  },
+});
