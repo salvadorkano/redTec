@@ -6,6 +6,7 @@ import {RootStackParamList} from './RootStackParams';
 import SplashScreen from 'react-native-splash-screen';
 import Auth from './authStack';
 import MyDrawer from './drawer';
+import HomeScreen from 'screens/Main/Home/home';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -25,6 +26,7 @@ function App() {
         initialRouteName={'Auth'}>
         <Stack.Screen name="Auth" component={Auth} />
         <Stack.Screen name="MyDrawer" component={MyDrawer} />
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -9,4 +9,18 @@ export const colors = {
   neutral05: '#F3F3F3',
   neutral60: '#6E6E70',
   red: '#DF0707',
+
+  primaryDark: '#039a83',
+  normal: '#b0e6fd',
+  important: '#e892ab',
+  icon1: '#ea7a72',
+  icon2: '#f8c907',
+  icon3: '#82a7c9',
+  icon4: '#c2c5d1',
+  light: '#f0f0f0',
+  darkGray: '#999999',
+  dark: '#123',
+  active: '#05294a99',
+  sceneBg: '#04567f',
+  screenBg: '#05294a',
 };

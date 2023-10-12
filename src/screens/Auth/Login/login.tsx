@@ -98,7 +98,7 @@ function LoginScreen({navigation}: routerProps<'Login'>) {
           <View style={styles.containerButton}>
             <ButtonComponent
               loading={loading}
-              disabled={!validate}
+              // disabled={!validate}
               onPress={() => (loading ? null : onLogin())}
               styleButton={
                 validate

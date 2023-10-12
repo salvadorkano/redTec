@@ -11,9 +11,7 @@ export type RootStackParamList = {
   ForgotPassword: undefined;
   MyDrawer: undefined;
   Home: undefined;
-  Details: {
-    variable: number;
-  };
+  Profile: undefined;
 };
 
 export type routerProps<RouteName extends keyof RootStackParamList> = {
