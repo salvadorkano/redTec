@@ -3,9 +3,16 @@ import {
   useDrawerProgress,
 } from '@react-navigation/drawer';
 import React, {useRef} from 'react';
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Pressable,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import styles from './DrawerStyle';
+import ProfileScreen from 'screens/Main/Profile/profile';
 
 function CustomDrawerContent(props: DrawerContentComponentProps) {
   const {navigation} = props;
@@ -52,7 +59,12 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
                   textAlignVertical: 'center',
                 })
               }>
-              Perfil
+              <Pressable onPress={() => navigation.navigate('Profile')}>
+                <Text
+                  style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
+                  Perfil
+                </Text>
+              </Pressable>
             </Text>
             <Text style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
               icono
