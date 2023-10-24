@@ -6,6 +6,7 @@ import CustomDrawerContent from '../screens/Drawer/CustomDrawer';
 import {RootStackParamList} from './RootStackParams';
 import {StyleSheet} from 'react-native';
 import HomeScreen from 'screens/Main/Home/home';
+import {colors} from 'colors';
 
 const Drawer = createDrawerNavigator<RootStackParamList>();
 function MyDrawer() {
@@ -16,6 +17,7 @@ function MyDrawer() {
         drawerPosition: 'right',
         headerShown: false,
         drawerStyle: styles.drawerStyles,
+        sceneContainerStyle: styles.contentStyle,
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={HomeScreen} />
@@ -30,5 +32,8 @@ const styles = StyleSheet.create({
   drawerStyles: {
     width: 280,
     backgroundColor: 'transparent',
+  },
+  contentStyle: {
+    backgroundColor: colors.white,
   },
 });

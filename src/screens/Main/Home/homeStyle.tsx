@@ -6,14 +6,13 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: colors.white,
   },
   containerHeader: {
     flex: 1,
-    padding: normalize(10),
     backgroundColor: colors.white,
     flexDirection: 'row',
+    marginHorizontal: normalize(20),
   },
   viewImage: {
     flex: 0.2,
@@ -41,5 +40,15 @@ export default StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: 'bold',
     lineHeight: 28,
+  },
+  containerSearch: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: normalize(20),
+  },
+  containerTabNab: {
+    flex: 10,
   },
 });
