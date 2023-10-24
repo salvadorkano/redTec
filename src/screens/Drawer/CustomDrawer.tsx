@@ -2,13 +2,15 @@ import {
   DrawerContentComponentProps,
   useDrawerProgress,
 } from '@react-navigation/drawer';
+import door from 'icons/door.png';
+import user from 'icons/user.png';
 import React, {useRef} from 'react';
 import {
+  Image,
   Pressable,
   SafeAreaView,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import styles from './DrawerStyle';
@@ -34,9 +36,6 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
     <SafeAreaView style={styles.container}>
       <Animated.View
         style={[styles.row, styles.view, styles.marginTop, viewStyles]}>
-        <View style={styles.iconContainer}>
-          <Text>Otro icono</Text>
-        </View>
         <Text style={styles.headerTitle}>¡Hola!</Text>
       </Animated.View>
       <Animated.ScrollView
@@ -45,39 +44,28 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
         showsVerticalScrollIndicator={false}
         style={[styles.marginVertical, viewStyles]}>
         {/* <DrawerItemList {...props} /> */}
-        <Animated.View
-          style={[styles.row, styles.view, styles.marginTop, viewStyles]}>
-          <View style={styles.iconContainer}>
-            <Text
-              style={
-                (styles.headerTitle,
-                {
-                  flex: 1,
-                  textAlign: 'right',
-                  paddingRight: 20,
-                  textAlignVertical: 'center',
-                })
-              }>
-              <Pressable onPress={() => navigation.navigate('Profile')}>
-                <Text
-                  style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
-                  Perfil
-                </Text>
-                <Text
-                  style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
-                  icono
-                </Text>
-              </Pressable>
-            </Text>
-          </View>
+        <Animated.View style={[styles.view, styles.marginTop, viewStyles]}>
+          <Pressable
+            onPress={() => navigation.navigate('Profile')}
+            style={styles.itemDrawer}>
+            <Text style={styles.textDrawer}>Perfil</Text>
+            <Image
+              style={styles.imageProfile}
+              resizeMode="contain"
+              source={user}
+            />
+          </Pressable>
         </Animated.View>
       </Animated.ScrollView>
       <TouchableOpacity onPress={logOut}>
         <Animated.View
           style={[styles.row, styles.view, styles.marginBottom, viewStyles]}>
-          <View>
-            <Text style={styles.headerTitle}>Cerrar sesión</Text>
-          </View>
+          <Text style={styles.textDrawer}>Cerrar sesión</Text>
+          <Image
+            style={styles.imageProfile}
+            resizeMode="contain"
+            source={door}
+          />
         </Animated.View>
       </TouchableOpacity>
     </SafeAreaView>

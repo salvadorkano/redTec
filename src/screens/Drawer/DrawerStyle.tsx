@@ -1,5 +1,6 @@
 import {colors} from 'colors';
 import {StyleSheet} from 'react-native';
+import {normalize} from 'utils/normalize';
 
 export const constant = {
   SPACING: 16,
@@ -30,54 +31,29 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: constant.borderRadius,
   },
-  drawerItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: constant.SPACING / 2,
-    justifyContent: 'space-between',
-    borderRadius: constant.borderRadius,
-  },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  label: {
-    fontSize: constant.textFontSize,
-    color: colors.dark,
-    paddingHorizontal: constant.SPACING,
-  },
-  notificationBadge: {
-    paddingVertical: constant.SPACING / 5,
-    paddingHorizontal: constant.SPACING / 2,
-    borderRadius: constant.borderRadius / 2,
-  },
-  iconContainer: {
-    padding: constant.SPACING / 2.4,
-    borderRadius: constant.borderRadius,
-    margin: constant.SPACING / 2,
-    flexDirection: 'row',
-    // backgroundColor: colors.primary,
-  },
-  separator: {
-    width: '100%',
-    height: 1,
-    backgroundColor: colors.darkGray,
-    marginVertical: constant.SPACING / 2,
   },
   headerTitle: {
     fontSize: constant.titleFontSize,
     color: colors.dark,
   },
-  profile: {
-    marginVertical: constant.SPACING / 2,
-    marginRight: constant.SPACING,
-    marginLeft: constant.SPACING / 2,
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: colors.light,
+  itemDrawer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '100%',
   },
-  profileText: {
-    color: colors.dark,
+  imageProfile: {
+    width: normalize(16),
+    height: normalize(16),
+    marginLeft: 10,
+  },
+  textDrawer: {
+    color: colors.gray1,
+    textAlign: 'center',
+    fontSize: normalize(16),
+    fontStyle: 'normal',
+    fontWeight: '500',
   },
 });

@@ -11,6 +11,7 @@ export const colors = {
   neutral60: '#6E6E70',
   red: '#DF0707',
   grayText: '#BDBDBD',
+  gray1: '#333',
 
   primaryDark: '#039a83',
   normal: '#b0e6fd',

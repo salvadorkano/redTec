@@ -7,6 +7,7 @@ import {RootStackParamList} from './RootStackParams';
 import {StyleSheet} from 'react-native';
 import HomeScreen from 'screens/Main/Home/home';
 import {colors} from 'colors';
+import {normalize} from 'utils/normalize';
 
 const Drawer = createDrawerNavigator<RootStackParamList>();
 function MyDrawer() {
@@ -30,7 +31,7 @@ export default MyDrawer;
 
 const styles = StyleSheet.create({
   drawerStyles: {
-    width: 280,
+    width: normalize(150),
     backgroundColor: 'transparent',
   },
   contentStyle: {
