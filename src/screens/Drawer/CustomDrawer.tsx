@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import styles from './DrawerStyle';
-import ProfileScreen from 'screens/Main/Profile/profile';
 
 function CustomDrawerContent(props: DrawerContentComponentProps) {
   const {navigation} = props;
@@ -64,10 +63,11 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
                   style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
                   Perfil
                 </Text>
+                <Text
+                  style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
+                  icono
+                </Text>
               </Pressable>
-            </Text>
-            <Text style={{alignSelf: 'flex-end', textAlignVertical: 'center'}}>
-              icono
             </Text>
           </View>
         </Animated.View>
