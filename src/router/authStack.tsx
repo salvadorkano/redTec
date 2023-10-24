@@ -4,6 +4,7 @@ import {RootStackParamList} from './RootStackParams';
 import LoginScreen from 'screens/Auth/Login/login';
 import RegisterScreen from 'screens/Auth/Register/register';
 import ForgotPasswordScreen from 'screens/Auth/ForgotPassword/forgotPassword';
+import ProfileScreen from 'screens/Main/Profile/profile';
 
 const AuthStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -13,9 +14,11 @@ function Auth() {
       screenOptions={{
         headerShown: false,
       }}
+      
       initialRouteName="Login">
       <AuthStack.Screen name="Login" component={LoginScreen} />
       <AuthStack.Screen name="Register" component={RegisterScreen} />
+      <AuthStack.Screen name="Profile" component={ProfileScreen} />
       <AuthStack.Screen
         name="ForgotPassword"
         component={ForgotPasswordScreen}

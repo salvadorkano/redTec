@@ -35,7 +35,7 @@ target 'redTec' do
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
     :hermes_enabled => false,
-    :fabric_enabled => flags[:fabric_enabled],
+    :fabric_enabled => false,
     # Enables Flipper.
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
