@@ -5,7 +5,9 @@ import {normalize} from 'utils/normalize';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: normalize(20),
+    justifyContent: 'center',
+    paddingHorizontal: normalize(30),
+    backgroundColor: colors.white,
   },
   containerHeader: {
     flexDirection: 'row',
@@ -23,9 +25,8 @@ export default StyleSheet.create({
     width: normalize(42),
     height: normalize(41),
   },
-  textInput: {
+  inputEmail: {
     backgroundColor: colors.neutral05,
-    color: colors.neutral60,
     fontSize: 16,
     fontWeight: '400',
     borderRadius: 10,
@@ -38,6 +39,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     height: 50,
     margin: 10,
+    alignContent:'center'
   },
   buttonText: {fontSize: 16, fontWeight: '600'},
   footScreenContainer: {

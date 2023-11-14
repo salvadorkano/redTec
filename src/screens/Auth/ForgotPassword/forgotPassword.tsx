@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {
   Image,
-  TextInput,
+  KeyboardAvoidingView,
   Pressable,
   SafeAreaView,
   Text,
@@ -13,9 +13,11 @@ import logo from 'images/LogoTec.png';
 import {colors} from 'colors';
 import ButtonComponent from 'components/button/button';
 import forgotPasswordStyle from './forgotPasswordStyle';
+import InputComponent from 'components/input/CustomInput';
 
 function ForgotPasswordScreen({navigation}: routerProps<'ForgotPassword'>) {
-  const [text, setText] = useState(''); // Estado para el valor del campo de entrada
+  //const [text, setText] = useState(''); // Estado para el valor del campo de entrada
+  const [email, setEmail] = useState<string>('');
 
 
   const Actionbutton = () => {
@@ -30,6 +32,8 @@ function ForgotPasswordScreen({navigation}: routerProps<'ForgotPassword'>) {
   }, []);
 
   return (
+    <KeyboardAvoidingView style={styles.container}>
+
     <SafeAreaView style={styles.container}>
       <View style={styles.containerHeader}>
         <Pressable onPress={() => navigation.goBack()}>
@@ -50,24 +54,26 @@ function ForgotPasswordScreen({navigation}: routerProps<'ForgotPassword'>) {
           Recuperar contraseña
         </Text>
         <Text style={{fontSize: 14, fontWeight: '400'}}>
-          Ingresa tu correo electronico con el que te registraste y enviaremos
+          Ingresa tu correo electrónico con el que te registraste y enviaremos
           un mail con las instrucciones para recuperar tu contraseña
         </Text>
 
-        <View style={{alignContent: 'center', marginTop: 100, padding: 10}}>
-          <TextInput
-            style={forgotPasswordStyle.textInput}
-            placeholder="Correo electronico"
-            value={text}
-            onChangeText={newText => setText(newText)} // Actualiza el estado 'text' al escribir
+        <View style={{alignItems: 'center', marginTop: 100, padding: 10}}>
+          <InputComponent
+            style={forgotPasswordStyle.inputEmail}
+            placeholder="Correo electrónico"
+            value={email}
+            onChange={newText => setEmail(newText)} // Actualiza el estado 'text' al escribir
+            placeholderColor={colors.neutral60}
+            keyboardType="email-address"
           />
-
           <ButtonComponent
             onPress={() => Actionbutton()}
             styleButton={forgotPasswordStyle.buttonStyle}
             buttonText={'Recuperar contraseña'}
             styleText={forgotPasswordStyle.buttonText}
           />
+
         </View>
       </View>
       <View style={forgotPasswordStyle.footScreenContainer}>
@@ -77,6 +83,8 @@ function ForgotPasswordScreen({navigation}: routerProps<'ForgotPassword'>) {
         </Text>
       </View>
     </SafeAreaView>
+    </KeyboardAvoidingView>
+
   );
 }
 
