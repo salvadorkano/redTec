@@ -1,3 +1,4 @@
+import {colors} from 'colors';
 import {StyleSheet} from 'react-native';
 import {normalize} from 'utils/normalize';
 
@@ -16,18 +17,21 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  viewSearch: {
+    marginBottom: normalize(20),
+  },
   searchBox: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 8,
+    backgroundColor: colors.neutral05,
+    marginTop: 0,
+    borderRadius: 12,
+    height: 50,
+    marginVertical: 10,
   },
   itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 10,
-    marginTop: 10,
+    marginVertical: 10,
   },
   image: {
     width: 50,
@@ -43,5 +47,20 @@ export default StyleSheet.create({
     fontSize: 14,
     marginLeft: 10,
     color: 'grey',
+  },
+  buttonStyle: {
+    backgroundColor: colors.primary,
+    borderRadius: 12,
+    height: 50,
+    margin: 10,
+    marginTop: normalize(25),
+  },
+  buttonText: {
+    fontSize: normalize(16),
+    fontStyle: 'normal',
+    fontWeight: '600',
+    lineHeight: normalize(26),
+    letterSpacing: 0.32,
+    color: colors.white,
   },
 });

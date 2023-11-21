@@ -5,8 +5,8 @@ import {normalize} from 'utils/normalize';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: normalize(30),
+    paddingTop: normalize(10),
+    paddingHorizontal: normalize(10),
     backgroundColor: colors.white,
   },
   containerHeader: {
@@ -25,21 +25,31 @@ export default StyleSheet.create({
     width: normalize(42),
     height: normalize(41),
   },
+  title: {
+    color: colors.titleText,
+    fontSize: 24,
+    fontWeight: '500',
+    marginTop: 40,
+    marginBottom: 10,
+  },
+  description: {fontSize: 14, fontWeight: '400'},
+  containerInput: {
+    alignItems: 'center',
+    marginTop: normalize(80),
+  },
   inputEmail: {
     backgroundColor: colors.neutral05,
     fontSize: 16,
     fontWeight: '400',
     borderRadius: 10,
-    paddingVertical: 10,
     paddingHorizontal: 16,
-    margin: 10,
   },
   buttonStyle: {
     backgroundColor: colors.primary,
     borderRadius: 10,
     height: 50,
     margin: 10,
-    alignContent:'center'
+    marginTop: normalize(25),
   },
   buttonText: {fontSize: 16, fontWeight: '600'},
   footScreenContainer: {

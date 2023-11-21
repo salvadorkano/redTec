@@ -65,7 +65,7 @@ function InputComponent(props: propsInputComponent) {
     <View
       style={{
         width: style?.width ?? '100%',
-        marginTop: style?.top ?? normalize(15),
+        marginTop: style?.marginTop ?? normalize(15),
         zIndex: style?.zIndex ?? 99999,
       }}>
       {props?.upperText ? (

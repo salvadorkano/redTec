@@ -3,6 +3,7 @@
 
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {propsDataCard} from 'components/tabNav/tabsContainer/allMessages/allMessages';
 
 export type RootStackParamList = {
   Auth: undefined;
@@ -12,6 +13,8 @@ export type RootStackParamList = {
   MyDrawer: undefined;
   Home: undefined;
   Profile: undefined;
+  DetailsCard: {item: propsDataCard};
+  CreateCard: undefined;
 };
 
 export type routerProps<RouteName extends keyof RootStackParamList> = {

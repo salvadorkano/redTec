@@ -33,7 +33,7 @@ function ButtonComponent(props: propsButtonComponent) {
           height: styleButton.height ?? normalize(45),
           backgroundColor: styleButton?.backgroundColor ?? colors.black,
           width: styleButton?.width ?? '100%',
-          marginTop: styleButton?.top ?? normalize(5),
+          marginTop: styleButton?.marginTop ?? normalize(5),
         },
       ]}>
       {loading === true ? (

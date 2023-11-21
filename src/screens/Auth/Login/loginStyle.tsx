@@ -42,7 +42,7 @@ export default StyleSheet.create({
   containerButton: {flex: 1},
   inputEmail: {
     backgroundColor: colors.neutral05,
-  }, 
+  },
   styleError: {
     alignSelf: 'flex-end',
     color: colors.red,

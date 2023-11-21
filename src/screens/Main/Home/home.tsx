@@ -24,9 +24,6 @@ function HomeScreen({navigation}: routerProps<'Home'>) {
           </Pressable>
         </View>
       </View>
-      <View style={homeStyle.containerSearch}>
-        <Text>Aqui va el Search</Text>
-      </View>
       <View style={homeStyle.containerTabNab}>
         <TabNavs />
       </View>

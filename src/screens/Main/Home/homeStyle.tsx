@@ -13,6 +13,7 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     flexDirection: 'row',
     marginHorizontal: normalize(20),
+    marginVertical: normalize(20),
   },
   viewImage: {
     flex: 0.2,
