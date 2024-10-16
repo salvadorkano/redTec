@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   FlatList,
   Animated,
+  Pressable,
 } from 'react-native';
 import allMessagesStyle from './allMessagesStyle';
 import filter from 'lodash.filter';
@@ -14,9 +15,8 @@ import {colors} from 'colors';
 import AllCards from 'components/cards/AllCards';
 import ButtonComponent from 'components/button/button';
 import {useNavigation} from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {getNotices} from '../../../../services/apiService';
 
-const API_ENDPOINT = 'https://randomuser.me/api/?results=30';
 export interface propsDataCard {
   author: string;
   title: string;
@@ -62,6 +62,48 @@ const dataCard: propsDataCard[] = [
     time: '11:30 pm',
     picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
   },
+  {
+    author: 'Servicios escolares',
+    title: 'Tarea',
+    description: 'Estas son las actividades que deberan realizar el d',
+    time: '11:30 pm',
+    picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
+  },
+  {
+    author: 'Servicios escolares',
+    title: 'Tarea',
+    description: 'Estas son las actividades que deberan realizar el d',
+    time: '11:30 pm',
+    picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
+  },
+  {
+    author: 'Servicios escolares',
+    title: 'Tarea',
+    description: 'Estas son las actividades que deberan realizar el d',
+    time: '11:30 pm',
+    picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
+  },
+  {
+    author: 'Servicios escolares',
+    title: 'Tarea',
+    description: 'Estas son las actividades que deberan realizar el d',
+    time: '11:30 pm',
+    picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
+  },
+  {
+    author: 'Servicios escolares',
+    title: 'Tarea',
+    description: 'Estas son las actividades que deberan realizar el d',
+    time: '11:30 pm',
+    picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
+  },
+  {
+    author: 'Servicios escolares',
+    title: 'Tarea',
+    description: 'Estas son las actividades que deberan realizar el d',
+    time: '11:30 pm',
+    picture: 'https://randomuser.me/api/portraits/thumb/men/10.jpg',
+  },
 ];
 const AllMessage = () => {
   const navigation = useNavigation();
@@ -80,13 +122,13 @@ const AllMessage = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchData(API_ENDPOINT);
+    fetchData();
   }, []);
 
   useEffect(() => {
     const fetchUserName = async () => {
       try {
-        const user = await AsyncStorage.getItem('userName');
+        const user = 'Profe';
         if (user === 'Profe') {
           setShowButton(true);
         } else {
@@ -99,13 +141,17 @@ const AllMessage = () => {
     fetchUserName();
   }, []);
 
-  const fetchData = async (url: string) => {
+  const fetchData = async () => {
+    setIsLoading(true);
     try {
-      const res = await fetch(url);
-      const json: any = await res.json();
-      setData(json.results);
-      setFullData(json.results);
+      const results = await getNotices();
+      console.log('results', results);
+
+      setData(results);
+      setFullData(results);
       setIsLoading(false);
+      setIsLoading(false);
+      setError(false);
     } catch (err) {
       setError(err);
       setIsLoading(false);
@@ -145,15 +191,19 @@ const AllMessage = () => {
 
   if (error) {
     return (
-      <View style={allMessagesStyle.containerError}>
+      <Pressable
+        style={allMessagesStyle.containerError}
+        onPress={() => fetchData()}>
         <Text>Error in Fetching data</Text>
-      </View>
+      </Pressable>
     );
   }
 
   return (
     <SafeAreaView style={allMessagesStyle.container}>
       <FlatList
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
         data={dataCard}
         ListHeaderComponent={
           <Animated.View

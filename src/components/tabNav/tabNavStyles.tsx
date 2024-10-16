@@ -9,6 +9,7 @@ export default StyleSheet.create({
   },
   itemContainer: {
     width: width,
+    // backgroundColor: 'red',
   },
   tabsContainer: {
     width: width,

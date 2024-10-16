@@ -5,7 +5,7 @@ import {normalize} from 'utils/normalize';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: normalize(20),
+    marginHorizontal: normalize(20),
   },
   containerLoading: {
     flex: 1,
@@ -19,6 +19,7 @@ export default StyleSheet.create({
   },
   viewSearch: {
     marginBottom: normalize(20),
+    marginTop: normalize(10),
   },
   searchBox: {
     backgroundColor: colors.neutral05,
