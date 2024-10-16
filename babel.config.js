@@ -19,6 +19,7 @@ module.exports = {
           screens: './src/screens',
           utils: './src/utils',
           styles: './src/styles',
+          services: './src/services',
         },
       },
     ],

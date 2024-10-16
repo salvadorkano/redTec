@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import {routerProps} from 'router/RootStackParams';
 import styles from './loginStyle';
 import InputComponent from 'components/input/CustomInput';
@@ -47,10 +48,15 @@ function LoginScreen({navigation}: routerProps<'Login'>) {
   };
 
   function onLogin() {
-    navigation.navigate('MyDrawer');
     setLoading(true);
+    // if (email === 'Profe@gmail.com' || email === 'profe@gmail.com') {
+    //   AsyncStorage.setItem('userName', 'Profe');
+    // } else {
+    //   AsyncStorage.setItem('userName', 'user');
+    // }
     setTimeout(() => {
       setLoading(false);
+      navigation.navigate('MyDrawer');
     }, 1000);
   }
 

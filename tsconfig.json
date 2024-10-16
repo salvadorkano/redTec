@@ -15,7 +15,8 @@
       "router": ["./src/router"],
       "screens": ["./src/screens"],
       "utils": ["./src/utils"],
-      "styles": ["./src/styles"]
+      "styles": ["./src/styles"],
+      "services": ["./src/services"]
     }
   }
 }

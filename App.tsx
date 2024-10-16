@@ -7,6 +7,7 @@ import Router from 'router/router';
 import 'react-native-gesture-handler';
 
 // let persistor = persistStore(store);
+console.log('Holaaa');
 
 const Index = () => {
   return (

@@ -21,6 +21,8 @@ import AllMessage from './tabsContainer/allMessages/allMessages';
 import DirectMessage from './tabsContainer/directMessage/directMessages';
 import GroupMessage from './tabsContainer/groupMessages/groupMessages';
 import styles from './tabNavStyles';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from 'router/RootStackParams';
 
 const {width: widthScreen} = Dimensions.get('screen');
 
@@ -33,8 +35,8 @@ type TabData = {
 
 const dataTabs: any = {
   Todos: <AllMessage />,
-  Individual: <DirectMessage />,
-  Grupo: <GroupMessage />,
+  // Individual: <DirectMessage />,
+  // Grupo: <GroupMessage />,
 };
 
 const data: TabData[] = Object.keys(dataTabs).map(key => ({
@@ -172,14 +174,14 @@ export default function TabNavs() {
 
   return (
     <View style={styles.container}>
-      <View style={{paddingVertical: normalize(10)}}>
+      {/* <View style={{paddingVertical: normalize(10)}}>
         <Tabs
           scrollX={scrollX}
           data={data}
           onItemPress={onItemPress}
           selectedTabIndex={selectedTabIndex}
         />
-      </View>
+      </View> */}
       <Animated.FlatList
         data={data}
         keyExtractor={item => item.key}

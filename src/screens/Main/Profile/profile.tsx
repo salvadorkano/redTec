@@ -31,7 +31,7 @@ function ProfileScreen({navigation}: routerProps<'Profile'>) {
           <Text style={styles.textInfo}>No. Control: 1506242</Text>
           <Text style={styles.textInfo}>Andres_22@gmail.com</Text>
           <Text style={styles.textInfo}>222-222-2222</Text>
-          <Text style={styles.editInfoText}>Editar información</Text>
+          {/* <Text style={styles.editInfoText}>Editar información</Text> */}
         </View>
       </View>
     </SafeAreaView>

@@ -12,6 +12,9 @@ export const colors = {
   red: '#DF0707',
   grayText: '#BDBDBD',
   gray1: '#333',
+  borderColor: '#F8F8F8',
+  green2: '#27AE60',
+  description: '#B2B4B8',
 
   primaryDark: '#039a83',
   normal: '#b0e6fd',
